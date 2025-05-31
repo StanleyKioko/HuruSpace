@@ -1,0 +1,22 @@
+/*===============================
+  VISUAL EXPLORATION PAGE STYLES
+================================*/
+.visual-section {
+    padding: 4rem 0;
+    background: #f8fafc;
+}
+
+.visual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.visual-card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}

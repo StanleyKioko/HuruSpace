@@ -1,0 +1,22 @@
+/*===============================
+  ACCESSIBILITY GUIDE PAGE STYLES
+================================*/
+.guide-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.guide-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.guide-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
