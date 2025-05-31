@@ -37,7 +37,7 @@ function NavBar() {
     return (
         <nav className="nav-container" role="navigation" aria-label="Main navigation">
             <div className="nav-content">
-                <Link to="/" className="nav-logo">Access Voyage</Link>
+                <Link to="/" className="nav-logo">Huruspace</Link>
                 <ul className="nav-links">
                     {[
                         { path: '/', label: 'Home' },
@@ -132,6 +132,34 @@ function Home() {
                     </Link>
                 </div>
             </section>
+            <section className="team-section">
+    <div className="container mx-auto px-4">
+        <h2 className="team-title">Meet Our Team</h2>
+        <div className="team-grid">
+            <div className="team-member">
+                <div className="team-image-placeholder">
+                    {/* Image placeholder for Mike */}
+                </div>
+                <h3 className="team-member-name">Mike Muia</h3>
+                <p className="team-member-role">Founder</p>
+            </div>
+            <div className="team-member">
+                <div className="team-image-placeholder">
+                    {/* Image placeholder for Stanley */}
+                </div>
+                <h3 className="team-member-name">Stanley Mwange</h3>
+                <p className="team-member-role">Co-founder</p>
+            </div>
+            <div className="team-member">
+                <div className="team-image-placeholder">
+                    {/* Image placeholder for David */}
+                </div>
+                <h3 className="team-member-name">David Murage</h3>
+                <p className="team-member-role">Co-founder</p>
+            </div>
+        </div>
+    </div>
+</section>
         </>
     );
 }
@@ -467,7 +495,7 @@ function Benefits() {
         <section className="benefits-section">
             <div className="benefits-container">
                 <div className="benefits-header">
-                    <h1 className="benefits-title">Why Choose Access Voyage?</h1>
+                    <h1 className="benefits-title">Why Choose Huruspace?</h1>
                     <p className="benefits-description">
                         Discover how our platform makes finding accessible places easier
                         and more reliable than ever before.
@@ -501,39 +529,103 @@ function Benefits() {
 }
 // Update the GetInvolved component
 function GetInvolved() {
+    const involvementOptions = [
+        {
+            icon: "📱",
+            title: "Download the App",
+            description: "Get started with our free mobile app available on major app stores."
+        },
+        {
+            icon: "⭐",
+            title: "Explore & Review",
+            description: "Share your experiences and help others find accessible places."
+        },
+        {
+            icon: "👥",
+            title: "Join the Community",
+            description: "Connect with others and create a more inclusive world together."
+        }
+    ];
+
+    const helpOptions = [
+        {
+            icon: "💰",
+            title: "Invest",
+            description: "Support our mission to make everywhere accessible."
+        },
+        {
+            icon: "🤝",
+            title: "Partner",
+            description: "Work with us to promote accessibility in your area."
+        },
+        {
+            icon: "📢",
+            title: "Share",
+            description: "Help spread the word about Access Voyage."
+        }
+    ];
+
     return (
         <section className="get-involved-section">
-            <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-8 text-center">Next Steps & Get Involved</h2>
-                <div className="involved-grid">
-                    <div className="involved-card">
-                        <h3 className="text-xl font-semibold mb-2">Download the App</h3>
-                        <p>Available on major app stores for free.</p>
-                    </div>
-                    <div className="involved-card">
-                        <h3 className="text-xl font-semibold mb-2">Explore & Review</h3>
-                        <p>Find accessible spots and share your feedback.</p>
-                    </div>
-                    <div className="involved-card">
-                        <h3 className="text-xl font-semibold mb-2">Join the Community</h3>
-                        <p>Connect with others to create a more inclusive world.</p>
-                    </div>
+            <div className="get-involved-container">
+                <div className="get-involved-header">
+                    <h1 className="get-involved-title">Get Involved</h1>
+                    <p className="get-involved-subtitle">
+                        Join our mission to make the world more accessible for everyone.
+                        Here's how you can be part of the change.
+                    </p>
                 </div>
-                <h2 className="text-3xl font-bold mt-12 mb-8 text-center">How You Can Help</h2>
+
+                <h2 className="get-involved-title">Next Steps</h2>
                 <div className="involved-grid">
-                    <div className="involved-card">
-                        <h3 className="text-xl font-semibold mb-2">Invest</h3>
-                        <p>Help us grow and reach more people.</p>
-                    </div>
-                    <div className="involved-card">
-                        <h3 className="text-xl font-semibold mb-2">Partner</h3>
-                        <p>Collaborate with us to promote accessibility.</p>
-                    </div>
-                    <div className="involved-card">
-                        <h3 className="text-xl font-semibold mb-2">Share</h3>
-                        <p>Spread the word about Access Voyage.</p>
-                    </div>
+                    {involvementOptions.map((option, index) => (
+                        <div key={index} className="involved-card">
+                            <div className="involved-icon">{option.icon}</div>
+                            <h3 className="involved-title">{option.title}</h3>
+                            <p className="involved-description">{option.description}</p>
+                        </div>
+                    ))}
                 </div>
+
+                <h2 className="get-involved-title">How You Can Help</h2>
+                <div className="involved-grid">
+                    {helpOptions.map((option, index) => (
+                        <div key={index} className="involved-card">
+                            <div className="involved-icon">{option.icon}</div>
+                            <h3 className="involved-title">{option.title}</h3>
+                            <p className="involved-description">{option.description}</p>
+                        </div>
+                    ))}
+                </div>
+
+                <section className="team-section">
+    <div className="container mx-auto px-4">
+        <h2 className="team-title">Meet Our Team</h2>
+        <div className="team-grid">
+            <div className="team-member">
+                <div className="team-image-placeholder">
+                    {/* Image placeholder for Mike */}
+                </div>
+                <h3 className="team-member-name">Mike Muia</h3>
+                <p className="team-member-role">Founder</p>
+            </div>
+            <div className="team-member">
+                <div className="team-image-placeholder">
+                    {/* Image placeholder for Stanley */}
+                </div>
+                <h3 className="team-member-name">Stanley Mwange</h3>
+                <p className="team-member-role">Co-founder</p>
+            </div>
+            <div className="team-member">
+                <div className="team-image-placeholder">
+                    {/* Image placeholder for David */}
+                </div>
+                <h3 className="team-member-name">David Murage</h3>
+                <p className="team-member-role">Co-founder</p>
+            </div>
+        </div>
+    </div>
+</section>
             </div>
         </section>
     );
@@ -555,8 +647,19 @@ export default function App() {
                     <Route path="/get-involved" element={<GetInvolved />} />
                 </Routes>
                 <footer className="nav-container">
-    <div className="section-container text-center text-white">
-        <p>Made with Love By Stanley ❤️ © 2025 Access Voyage</p>
+    <div className="footer-content">
+        <p>Made with Love By Stanley ❤️ © 2025 Huruspace</p>
+        <div className="social-icons">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon">
+                <i className="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon">
+                <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-icon">
+                <i className="fab fa-x-twitter"></i>
+            </a>
+        </div>
     </div>
 </footer>
             </BrowserRouter>
