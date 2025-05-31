@@ -416,22 +416,84 @@ function AccessibilityGuide() {
 // Replace the Benefits component
 function Benefits() {
     const benefits = [
-        { title: "Community Support", desc: "Connect with others and share experiences" },
-        { title: "Verified Reviews", desc: "Trust ratings from users like you" },
-        { title: "Personalized Results", desc: "Find places that meet your specific needs" }
+        {
+            icon: "🤝",
+            title: "Community Support",
+            desc: "Connect with others and share experiences through our vibrant community of users who understand accessibility needs."
+        },
+        {
+            icon: "✓",
+            title: "Verified Reviews",
+            desc: "Trust detailed, honest ratings and reviews from users who have first-hand experience with venues."
+        },
+        {
+            icon: "🎯",
+            title: "Personalized Results",
+            desc: "Find places that perfectly match your specific accessibility requirements and preferences."
+        },
+        {
+            icon: "📱",
+            title: "Real-Time Updates",
+            desc: "Stay informed with the latest accessibility information and temporary changes at venues."
+        },
+        {
+            icon: "🔍",
+            title: "Detailed Information",
+            desc: "Access comprehensive details about accessibility features, measurements, and accommodations."
+        },
+        {
+            icon: "💡",
+            title: "Smart Recommendations",
+            desc: "Receive personalized suggestions based on your preferences and past experiences."
+        }
+    ];
+
+    const testimonials = [
+        {
+            text: "Access Voyage has transformed how I explore new places. I can now find accessible venues with confidence!",
+            author: "Sarah M., Wheelchair User"
+        },
+        {
+            text: "The detailed accessibility information helps me plan ahead and avoid any surprises.",
+            author: "James L., Visual Impairment"
+        },
+        {
+            text: "The community support is amazing. It's great to share experiences with others who understand.",
+            author: "Maria R., Parent"
+        }
     ];
 
     return (
-        <section className="page-section bg-[var(--background-light)]">
-            <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold mb-8 text-center">User Benefits</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section className="benefits-section">
+            <div className="benefits-container">
+                <div className="benefits-header">
+                    <h1 className="benefits-title">Why Choose Access Voyage?</h1>
+                    <p className="benefits-description">
+                        Discover how our platform makes finding accessible places easier
+                        and more reliable than ever before.
+                    </p>
+                </div>
+
+                <div className="benefits-grid">
                     {benefits.map((benefit, index) => (
                         <div key={index} className="benefit-card">
-                            <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                            <p className="text-gray-600">{benefit.desc}</p>
+                            <div className="benefit-icon">{benefit.icon}</div>
+                            <h3 className="benefit-title">{benefit.title}</h3>
+                            <p className="benefit-description">{benefit.desc}</p>
                         </div>
                     ))}
+                </div>
+
+                <div className="testimonial-section">
+                    <h2 className="benefits-title">What Our Users Say</h2>
+                    <div className="testimonial-grid">
+                        {testimonials.map((testimonial, index) => (
+                            <div key={index} className="testimonial-card">
+                                <p className="testimonial-text">"{testimonial.text}"</p>
+                                <p className="testimonial-author">{testimonial.author}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
