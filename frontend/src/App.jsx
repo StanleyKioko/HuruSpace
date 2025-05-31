@@ -254,26 +254,70 @@ function Search() {
 
 // Replace the VisualExploration component
 function VisualExploration() {
+    const visualFeatures = [
+        {
+            icon: "🔄",
+            title: "360° Virtual Tours",
+            description: "Experience immersive walkthroughs of venues before visiting. Explore accessibility features from every angle.",
+        },
+        {
+            icon: "📸",
+            title: "Photo Galleries",
+            description: "Browse high-quality images showcasing accessibility features, entrances, and facilities at various locations.",
+        },
+        {
+            icon: "🗺️",
+            title: "Interactive Maps",
+            description: "Navigate through detailed floor plans highlighting accessible routes, amenities, and emergency exits.",
+        },
+        {
+            icon: "📱",
+            title: "Mobile Accessibility",
+            description: "Access all visual features on any device with our responsive design and mobile-friendly interface.",
+        },
+        {
+            icon: "🎯",
+            title: "Detailed Measurements",
+            description: "Get precise measurements of doorways, ramps, and spaces to ensure they meet your needs.",
+        },
+        {
+            icon: "🎥",
+            title: "Video Walkthroughs",
+            description: "Watch guided video tours with detailed explanations of accessibility features.",
+        }
+    ];
+
     return (
-        <section className="page-section bg-[var(--background-light)]">
-            <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold mb-8 text-center">Visual Exploration</h2>
-                <p className="text-lg mb-8 text-center max-w-2xl mx-auto">
-                    Explore venues through our comprehensive visual guides and virtual tours.
-                </p>
-                <div className="image-grid">
-                    <div className="feature-card">
-                        <h3 className="text-xl font-semibold mb-3">360° Virtual Tours</h3>
-                        <p className="text-gray-600">Immersive walkthroughs of venues</p>
-                    </div>
-                    <div className="feature-card">
-                        <h3 className="text-xl font-semibold mb-3">Photo Galleries</h3>
-                        <p className="text-gray-600">High-quality images of accessibility features</p>
-                    </div>
-                    <div className="feature-card">
-                        <h3 className="text-xl font-semibold mb-3">Interactive Maps</h3>
-                        <p className="text-gray-600">Navigate through floor plans</p>
-                    </div>
+        <section className="visual-section">
+            <div className="visual-container">
+                <div className="visual-header">
+                    <h1 className="visual-title">Visual Exploration</h1>
+                    <p className="visual-description">
+                        Experience venues virtually before visiting. Our comprehensive visual tools
+                        help you make informed decisions about accessibility.
+                    </p>
+                </div>
+
+                <div className="visual-grid">
+                    {visualFeatures.map((feature, index) => (
+                        <div key={index} className="visual-card">
+                            <div>
+                                <div className="visual-icon">{feature.icon}</div>
+                                <h3 className="visual-card-title">{feature.title}</h3>
+                                <p className="visual-card-description">{feature.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="visual-demo">
+                    <h2 className="visual-card-title">Try Our Virtual Tour Demo</h2>
+                    <p className="visual-card-description">
+                        Experience our virtual exploration features firsthand with our interactive demo.
+                    </p>
+                    <a href="#" className="demo-button" tabIndex="0">
+                        Launch Demo Tour
+                    </a>
                 </div>
             </div>
         </section>
