@@ -106,20 +106,6 @@
     margin-top: 4rem;
 }
 
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-description {
-        font-size: 1.1rem;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Team Section Styles */
 .team-section {
     padding: 6rem 2rem;
@@ -179,12 +165,11 @@
     font-size: 1.1rem;
 }
 
-/* Updated Footer Styles */
-.site-footer {
-    background: #1e40af;
-    color: white;
-    padding: 2rem 0;
-    margin-top: 4rem;
+/* Footer Styles */
+footer.nav-container {
+    background-color: #1e40af !important;
+    box-shadow: none !important;
+    margin-top: 0;
 }
 
 .footer-content {
@@ -193,12 +178,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 2rem;
+    color: white;
 }
 
-.footer-text {
-    font-size: 1rem;
+.footer-content p {
     color: white;
+    margin: 0;
+    font-size: 1rem;
 }
 
 .social-icons {
@@ -208,33 +195,48 @@
 }
 
 .social-icon {
-    color: white;
+    color: white !important;
     font-size: 1.5rem;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
 }
 
 .social-icon:hover {
     transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.2);
-    color: #f59e0b;
+    color: #f59e0b !important;
+    text-decoration: none;
 }
 
-/* Update media queries for footer */
 @media (max-width: 768px) {
-    /* ...existing mobile styles remain unchanged... */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        gap: 2rem;
+    }
+
+    .team-image-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+
+    .team-member-name {
+        font-size: 1.25rem;
+    }
 
     .footer-content {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
         text-align: center;
-        padding: 1rem;
     }
 
     .social-icons {
