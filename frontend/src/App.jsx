@@ -7,6 +7,8 @@ import './VisualExploration.css';
 import './AccessibilityGuide.css';
 import './Benefits.css';
 import './GetInvolved.css';
+import './Navbar.css';
+import './Home.css';
 
 class ErrorBoundary extends React.Component {
     state = { hasError: false, error: null };
@@ -60,20 +62,72 @@ function NavBar() {
         </nav>
     );
 }
-
 function Home() {
     return (
         <>
             <section className="hero-section">
-                <div className="section-container">
-                    <h2 className="text-4xl font-bold mb-4">Discover Accessible Places With Ease</h2>
-                    <p className="text-lg mb-6">Find inclusive restaurants, parks, hotels, and more with our app designed for people with disabilities.</p>
-                    <Link
-                        to="/get-involved"
-                        className="button-primary"
-                        tabIndex="0"
-                    >
-                        Download the App
+                <div className="hero-content">
+                    <h1 className="hero-title">Discover Accessible Places With Ease</h1>
+                    <p className="hero-description">
+                        Find inclusive restaurants, parks, hotels, and more with our app designed 
+                        for people with disabilities. Join our community and explore the world without barriers.
+                    </p>
+                    {/*<Link to="/get-involved" className="cta-button" tabIndex="0">*/}
+
+                    {/*</Link>*/}
+                </div>
+            </section>
+
+            <section className="features-grid">
+                <div className="feature-item">
+                    <div className="feature-icon">🔍</div>
+                    <h3>Find Accessible Venues</h3>
+                    <p>Discover places that cater to your specific accessibility needs</p>
+                </div>
+                <div className="feature-item">
+                    <div className="feature-icon">👥</div>
+                    <h3>Community Support</h3>
+                    <p>Connect with others and share experiences</p>
+                </div>
+                <div className="feature-item">
+                    <div className="feature-icon">📱</div>
+                    <h3>Easy Navigation</h3>
+                    <p>User-friendly interface designed for everyone</p>
+                </div>
+            </section>
+
+            <section className="testimonial-section">
+                <div className="hero-content">
+                    <h2 className="text-3xl font-bold mb-8">What Our Users Say</h2>
+                    <blockquote className="text-xl italic mb-4">
+                        "Access Voyage has transformed how I explore new places. I can now find 
+                        accessible venues with confidence!"
+                    </blockquote>
+                    <p className="font-semibold">- Sarah M., Community Member</p>
+                </div>
+            </section>
+
+            <section className="stats-section">
+                <div className="stat-item">
+                    <div className="stat-number">1,000+</div>
+                    <p>Accessible Venues</p>
+                </div>
+                <div className="stat-item">
+                    <div className="stat-number">10,000+</div>
+                    <p>Community Members</p>
+                </div>
+                <div className="stat-item">
+                    <div className="stat-number">4.8/5</div>
+                    <p>User Rating</p>
+                </div>
+            </section>
+
+            <section className="cta-banner">
+                <div className="hero-content">
+                    <h2 className="text-3xl font-bold mb-4">Join Our Growing Community</h2>
+                    <p className="text-xl mb-8">Download the app today and start exploring accessible places</p>
+                    <Link to="/get-involved" className="cta-button" tabIndex="0">
+                        Get Started
                     </Link>
                 </div>
             </section>
