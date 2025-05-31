@@ -9,6 +9,7 @@ import './Benefits.css';
 import './GetInvolved.css';
 import './Navbar.css';
 import './Home.css';
+import './Guide.css';
 
 class ErrorBoundary extends React.Component {
     state = { hasError: false, error: null };
@@ -326,31 +327,92 @@ function VisualExploration() {
 
 // Replace the AccessibilityGuide component
 function AccessibilityGuide() {
-    const guideFeatures = [
-        "High contrast and adjustable text size",
-        "Alt text for images",
-        "Keyboard navigation support",
-        "Color contrast for better readability",
-        "Clear spacing for easy navigation",
+    const guideCategories = [
+        {
+            icon: "♿",
+            title: "Mobility Features",
+            items: [
+                "Wheelchair ramp specifications",
+                "Door width requirements",
+                "Elevator access guidelines",
+                "Parking space dimensions"
+            ]
+        },
+        {
+            icon: "👁️",
+            title: "Visual Accessibility",
+            items: [
+                "Braille signage placement",
+                "High-contrast design principles",
+                "Tactile pathway guidelines",
+                "Audio description standards"
+            ]
+        },
+        {
+            icon: "👂",
+            title: "Auditory Accessibility",
+            items: [
+                "Hearing loop installation",
+                "Sign language interpretation",
+                "Visual alert systems",
+                "Acoustic considerations"
+            ]
+        },
+        {
+            icon: "🤝",
+            title: "Universal Design",
+            items: [
+                "Inclusive space planning",
+                "Multi-sensory experience",
+                "Flexible accommodation",
+                "Emergency accessibility"
+            ]
+        }
     ];
 
     return (
-        <section className="page-section bg-white">
-            <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold mb-8 text-center">Accessibility Guide</h2>
-                <div className="guide-list">
-                    {guideFeatures.map((feature, index) => (
-                        <div key={index} className="guide-item">
-                            <h3 className="text-lg font-semibold mb-2">✓ {feature}</h3>
-                            <p className="text-gray-600">Learn how to make the most of this feature</p>
+        <section className="guide-section">
+            <div className="guide-container">
+                <div className="guide-header">
+                    <h1 className="guide-title">Accessibility Guide</h1>
+                    <p className="guide-description">
+                        Comprehensive guidelines and best practices for creating and identifying
+                        accessible spaces for everyone.
+                    </p>
+                </div>
+
+                <div className="guide-content">
+                    {guideCategories.map((category, index) => (
+                        <div key={index} className="guide-category">
+                            <h2 className="category-title">
+                                <span className="category-icon">{category.icon}</span>
+                                {category.title}
+                            </h2>
+                            <ul className="guide-list">
+                                {category.items.map((item, itemIndex) => (
+                                    <li key={itemIndex} className="guide-item">
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     ))}
+                </div>
+
+                <div className="guide-tip">
+                    <h3 className="tip-title">Need More Information?</h3>
+                    <p className="tip-description">
+                        Access our detailed documentation and resources for comprehensive
+                        accessibility guidelines.
+                    </p>
+                    <a href="#" className="learn-more-button" tabIndex="0">
+                        Learn More
+                    </a>
                 </div>
             </div>
         </section>
     );
 }
-
 // Replace the Benefits component
 function Benefits() {
     const benefits = [
