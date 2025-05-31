@@ -138,23 +138,56 @@ function Home() {
 // Replace the Features component
 function Features() {
     const coreFeatures = [
-        { title: "Wheelchair Ramps & Elevators", desc: "Easy step-free access for all mobility levels." },
-        { title: "Sign Language Friendly Staff", desc: "Support for communication with trained personnel." },
-        { title: "Braille Menus & Signage", desc: "Tactile guides for visually impaired visitors." },
-        { title: "Accessible Restrooms", desc: "Convenient, spacious, and compliant facilities." },
-        { title: "Hearing Loops & Captioned Services", desc: "Enhances sound clarity for hearing aid users with captions on videos and live events." },
-        { title: "Step-Free Entrances & Inclusive Parking", desc: "Smooth building access with reserved parking spots close to entrances." },
+        {
+            icon: "♿",
+            title: "Wheelchair Ramps & Elevators",
+            desc: "Easy step-free access for all mobility levels, ensuring everyone can move around comfortably and independently."
+        },
+        {
+            icon: "👐",
+            title: "Sign Language Friendly Staff",
+            desc: "Trained personnel who can communicate effectively with deaf and hard-of-hearing visitors."
+        },
+        {
+            icon: "👥",
+            title: "Braille Menus & Signage",
+            desc: "Tactile guides and menus for visually impaired visitors, making navigation and ordering easier."
+        },
+        {
+            icon: "🚽",
+            title: "Accessible Restrooms",
+            desc: "Spacious, well-equipped facilities that meet ADA standards for convenience and comfort."
+        },
+        {
+            icon: "🔊",
+            title: "Hearing Loops & Captions",
+            desc: "Enhanced audio systems and captioning for better communication and engagement."
+        },
+        {
+            icon: "🅿️",
+            title: "Inclusive Parking",
+            desc: "Reserved parking spots close to entrances with proper signage and space for mobility equipment."
+        }
     ];
 
     return (
-        <section className="page-section bg-[var(--background-light)]">
-            <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold mb-8 text-center">Core Accessibility Features</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section className="features-section">
+            <div className="features-container">
+                <div className="features-header">
+                    <h1 className="features-title">Core Accessibility Features</h1>
+                    <p className="features-subtitle">
+                        Discover how we make places more accessible for everyone through
+                        these essential features and accommodations.
+                    </p>
+                </div>
+                <div className="features-grid">
                     {coreFeatures.map((feature, index) => (
                         <div key={index} className="feature-card">
-                            <h3 className="text-xl font-semibold mb-3 text-[var(--primary-blue)]">{feature.title}</h3>
-                            <p className="text-gray-600">{feature.desc}</p>
+                            <div>
+                                <div className="feature-icon">{feature.icon}</div>
+                                <h3 className="feature-title">{feature.title}</h3>
+                                <p className="feature-description">{feature.desc}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -165,21 +198,53 @@ function Features() {
 
 // Replace the Search component
 function Search() {
+    const popularSearches = [
+        "Wheelchair Accessible", "Sign Language", "Braille Available",
+        "Audio Description", "Parking", "Restrooms", "Ramps",
+        "Guide Dogs Welcome", "Visual Aids"
+    ];
+
     return (
-        <section className="page-section bg-white">
-            <div className="container mx-auto px-4">
-                <h2 className="text-4xl font-bold mb-8 text-center">Find Accessible Places</h2>
-                <div className="flex flex-col items-center">
+        <section className="search-section">
+            <div className="search-container">
+                <div className="search-header">
+                    <h1 className="search-title">Find Accessible Places</h1>
+                    <p className="search-subtitle">
+                        Discover venues that cater to your specific accessibility needs
+                    </p>
+                </div>
+
+                <div className="search-box-container">
                     <input
                         type="text"
-                        placeholder="Search for accessible places..."
+                        placeholder="Search for accessible places near you..."
                         className="search-input"
                         aria-label="Search for accessible places"
                     />
-                    <div className="button-group">
-                        <button className="action-button">Filter by Rating</button>
-                        <button className="action-button">Filter by Location</button>
-                        <button className="action-button">Filter by Features</button>
+                    <div className="filter-section">
+                        <button className="filter-button">
+                            <span>⭐</span> Filter by Rating
+                        </button>
+                        <button className="filter-button">
+                            <span>📍</span> Filter by Location
+                        </button>
+                        <button className="filter-button">
+                            <span>🔍</span> Filter by Features
+                        </button>
+                        <button className="filter-button">
+                            <span>📝</span> Filter by Reviews
+                        </button>
+                    </div>
+                </div>
+
+                <div className="popular-searches">
+                    <h2 className="popular-title">Popular Searches</h2>
+                    <div className="tag-cloud">
+                        {popularSearches.map((tag, index) => (
+                            <button key={index} className="search-tag">
+                                {tag}
+                            </button>
+                        ))}
                     </div>
                 </div>
             </div>
